@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DataVista Analytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!--MOBILE MENU-->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation">
+    <a href="#screens">App</a>
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#integrations">Integrations</a>
+    <a href="#faq">FAQ</a>
+    <a href="#" class="mobile-cta btn-primary">Start Free Trial</a>
+  </div>
+
+  <!--NAV-->
+  <nav class="nav" id="mainNav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">Data<span>Vista</span></a> 
+  
+      <ul class="nav-links" role="list">
+        <li><a href="#screens">Platform</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="#" class="btn-ghost">Sign in</a>
+        <a href="#" class="btn-primary">Start Free Trial</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO-->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge reveal">
+            <div class="hero-badge-dot">✦</div>
+            <span>Trusted by modern <strong>analytics teams</strong> worldwide</span>
+          </div>
+          <h1 class="hero-title reveal reveal-delay-1">
+            Insights that<br><em>move your business.</em>
+          </h1>
+          <p class="hero-sub reveal reveal-delay-2">
+            DataVista brings your metrics, queries, and reports into one intelligent analytics platform. Faster answers, better decisions.
+          </p>
+          <div class="hero-actions reveal reveal-delay-3">
+            <a href="#" class="btn-primary-lg">
+              Start Free Trial
+              <span class="btn-arrow">→</span>
+            </a>
+            <a href="#screens" class="btn-outline-lg">
+              <span>▶</span> Explore the platform
+            </a>
+          </div>
+          <div class="hero-trust reveal reveal-delay-4">
+            <div class="trust-item">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              Enterprise-grade security
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              99.9% live data uptime
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              Real-time data refresh
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual reveal reveal-delay-2">
+          <div class="hero-dashboard">
+            <div class="dashboard-bar">
+              <div class="db-dot"></div><div class="db-dot"></div><div class="db-dot"></div>
+            </div>
+            <div class="dashboard-body">
+              <div class="db-header">
+                <div class="db-title">Live Metrics</div>
+                <div class="db-tag">Live</div>
+              </div>
+              <div class="db-chart">
+                <div class="db-bar" style="height:35%"></div>
+                <div class="db-bar" style="height:55%"></div>
+                <div class="db-bar" style="height:42%"></div>
+                <div class="db-bar active" style="height:75%"></div>
+                <div class="db-bar" style="height:60%"></div>
+                <div class="db-bar active" style="height:88%"></div>
+                <div class="db-bar" style="height:70%"></div>
+                <div class="db-bar active" style="height:92%"></div>
+              </div>
+              <div class="db-stats">
+                <div class="db-stat">
+                  <div class="db-stat-val">94<span style="font-size:.9rem;color:var(--accent)">%</span></div>
+                  <div class="db-stat-label">Task Rate</div>
+                  <div class="db-stat-change">+12%</div>
+                </div>
+                <div class="db-stat">
+                  <div class="db-stat-val">2.4<span style="font-size:.9rem;color:var(--accent)">k</span></div>
+                  <div class="db-stat-label">Active Users</div>
+                  <div class="db-stat-change">+8%</div>
+                </div>
+                <div class="db-stat">
+                  <div class="db-stat-val">18<span style="font-size:.9rem;color:var(--accent)">h</span></div>
+                  <div class="db-stat-label">Saved / week</div>
+                  <div class="db-stat-change">+24%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-float-badge">
+            <div class="float-badge-icon">✦</div>
+            <div class="float-badge-text">
+              <strong>New integration</strong>
+              <span>Slack connected · just now</span>
+            </div>
+          </div>
+          <div class="hero-float-badge-2">
+            <div class="float-badge-2-val">↑ 34%</div>
+            <div class="float-badge-2-label">Output this week</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- FEATURES -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="features-header">
+        <div class="section-label reveal">Platform Features</div>
+        <h2 class="section-title reveal reveal-delay-1">Built for <em>action</em><br>at every scale</h2>
+        <p class="section-sub reveal reveal-delay-2">Insights, automation, and collaboration designed to help analytics teams move faster with confidence.</p>
+      </div>
+
+      <!-- Feature 1 -->
+      <div class="feature-row">
+        <div class="feature-content reveal">
+          <div class="feature-number">01 — Unified Analytics</div>
+          <h3 class="feature-title">Every dataset,<br><em>one smart view</em></h3>
+          <p class="feature-desc">Connect data from your warehouse, CRM, and cloud tools into a single analytics workspace. Build dashboards that update automatically and keep stakeholders aligned.</p>
+          <div class="feature-checklist">
+            <div class="feature-check"><div class="check-icon">✓</div><span>Cross-source dashboards and charts</span></div>
+            <div class="feature-check"><div class="check-icon">✓</div><span>Live refresh from databases and APIs</span></div>
+            <div class="feature-check"><div class="check-icon">✓</div><span>Shareable insights with secure access</span></div>
+          </div>
+        </div>
+        <div class="feature-visual reveal reveal-delay-1">
+          <div class="feature-visual-inner">
+            <div class="fv-row">
+              <div class="fv-card">
+                <div class="fv-card-label">Monthly Revenue</div>
+                <div class="fv-card-val">$84.2k</div>
+                <div class="fv-card-bar"><div class="fv-card-bar-fill" style="width:72%"></div></div>
+              </div>
+              <div class="fv-card">
+                <div class="fv-card-label">Query Success</div>
+                <div class="fv-card-val">98.7%</div>
+                <div class="fv-card-bar"><div class="fv-card-bar-fill" style="width:88%"></div></div>
+              </div>
+            </div>
+            <div class="fv-card">
+              <div class="fv-card-label">Data sync</div>
+              <div class="fv-list" style="margin-top:8px">
+                <div class="fv-list-item"><span class="fv-list-name">Sales dataset refreshed</span><span class="fv-pill green">Live</span></div>
+                <div class="fv-list-item"><span class="fv-list-name">Finance ETL completed</span><span class="fv-pill blue">Done</span></div>
+                <div class="fv-list-item"><span class="fv-list-name">Marketing feed updated</span><span class="fv-pill dim">Queued</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="feature-row reverse">
+        <div class="feature-content reveal">
+          <div class="feature-number">02 — AI Insights</div>
+          <h3 class="feature-title">Intelligence that<br><em>finds the signal</em></h3>
+          <p class="feature-desc">Ask questions in plain language, generate forecasts, and automate alerts. DataVista turns raw numbers into recommendations without extra setup.</p>
+          <div class="feature-checklist">
+            <div class="feature-check"><div class="check-icon">✓</div><span>Natural language query assistant</span></div>
+            <div class="feature-check"><div class="check-icon">✓</div><span>Auto-generated trend and anomaly alerts</span></div>
+            <div class="feature-check"><div class="check-icon">✓</div><span>Custom models for business KPIs</span></div>
+          </div>
+        </div>
+        <div class="feature-visual reveal reveal-delay-1">
+          <div class="feature-visual-inner">
+            <div class="fv-card">
+              <div class="fv-card-label">Open Insights</div>
+              <div class="fv-list" style="margin-top:8px">
+                <div class="fv-list-item"><span class="fv-list-name">Revenue forecast</span><span class="fv-pill green">Ready</span></div>
+                <div class="fv-list-item"><span class="fv-list-name">Churn risk alert</span><span class="fv-pill green">Active</span></div>
+                <div class="fv-list-item"><span class="fv-list-name">Inventory anomaly</span><span class="fv-pill blue">Monitoring</span></div>
+                <div class="fv-list-item"><span class="fv-list-name">Campaign ROI update</span><span class="fv-pill dim">Pending</span></div>
+              </div>
+            </div>
+            <div class="fv-row">
+              <div class="fv-card fv-wide">
+                <div class="fv-card-label">Hours saved this month</div>
+                <div class="fv-card-val">148h</div>
+                <div class="fv-card-bar"><div class="fv-card-bar-fill" style="width:91%"></div></div>
+              </div>
+              <div class="fv-card">
+                <div class="fv-card-label">Automated alerts</div>
+                <div class="fv-card-val">24</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="feature-row">
+        <div class="feature-content reveal">
+          <div class="feature-number">03 — Shared Insights</div>
+          <h3 class="feature-title">Align everyone with<br><em>one source of truth</em></h3>
+          <p class="feature-desc">Discuss charts, share comments, and resolve analysis directly inside reports. Data teams and stakeholders stay synchronized without extra meetings.</p>
+          <div class="feature-checklist">
+            <div class="feature-check"><div class="check-icon">✓</div><span>Comments on dashboards and charts</span></div>
+            <div class="feature-check"><div class="check-icon">✓</div><span>Shared insight threads</span></div>
+            <div class="feature-check"><div class="check-icon">✓</div><span>Versioned report snapshots</span></div>
+          </div>
+        </div>
+        <div class="feature-visual reveal reveal-delay-1">
+          <div class="feature-visual-inner">
+            <div class="fv-row">
+              <div class="fv-card fv-wide">
+                <div class="fv-card-label">Team active</div>
+                <div style="display:flex;gap:-4px;margin-top:6px">
+                  <div style="width:28px;height:28px;border-radius:50%;background:var(--accent);border:2px solid var(--surface);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff">A</div>
+                  <div style="width:28px;height:28px;border-radius:50%;background:var(--accent-mid);border:2px solid var(--surface);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;margin-left:-6px">K</div>
+                  <div style="width:28px;height:28px;border-radius:50%;background:#5A6B66;border:2px solid var(--surface);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;margin-left:-6px">M</div>
+                  <div style="width:28px;height:28px;border-radius:50%;background:var(--bg-alt);border:2px solid var(--surface);display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--text-2);margin-left:-6px">+5</div>
+                </div>
+              </div>
+              <div class="fv-card">
+                <div class="fv-card-label">Open reviews</div>
+                <div class="fv-card-val">37</div>
+              </div>
+            </div>
+            <div class="fv-card">
+              <div class="fv-card-label">Recent comments</div>
+              <div class="fv-list" style="margin-top:8px">
+                <div class="fv-list-item"><span class="fv-list-name">Alex → dashboard updated</span><span class="fv-pill green">Resolved</span></div>
+                <div class="fv-list-item"><span class="fv-list-name">Kim → verify data source</span><span class="fv-pill blue">Open</span></div>
+                <div class="fv-list-item"><span class="fv-list-name">Maya → approved insight</span><span class="fv-pill green">Done</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--STATS -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <div class="stat-rule"></div>
+          <div class="stat-value"><span class="stat-num" data-target="50">0</span><span class="stat-suffix">k+</span></div>
+          <div class="stat-label">Companies analyzed</div>
+          <div class="stat-sublabel">Across high-growth teams</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-1">
+          <div class="stat-rule"></div>
+          <div class="stat-value"><span class="stat-num" data-target="34">0</span><span class="stat-suffix">%</span></div>
+          <div class="stat-label">Quicker decisions</div>
+          <div class="stat-sublabel">From insight to action</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-2">
+          <div class="stat-rule"></div>
+          <div class="stat-value"><span class="stat-num" data-target="99" data-decimal="9">0</span><span class="stat-suffix">%</span></div>
+          <div class="stat-label">Query success rate</div>
+          <div class="stat-sublabel">Trusted by analytics teams</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-3">
+          <div class="stat-rule"></div>
+          <div class="stat-value"><span class="stat-num" data-target="18">0</span><span class="stat-suffix">h</span></div>
+          <div class="stat-label">Saved per analyst weekly</div>
+          <div class="stat-sublabel">By automating reporting</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--PRICING -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="pricing-header">
+        <div class="section-label reveal">Pricing</div>
+        <h2 class="section-title reveal reveal-delay-1">Simple, <em>transparent</em> pricing</h2>
+        <p class="section-sub reveal reveal-delay-2">Get powerful analytics, AI alerts, and secure collaboration without hidden fees.</p>
+      </div>
+      <div class="pricing-toggle reveal">
+        <span class="toggle-label active" id="monthlyLabel">Monthly</span>
+        <div class="toggle-switch" id="pricingToggle" role="switch" aria-checked="false" tabindex="0" aria-label="Toggle annual billing"></div>
+        <span class="toggle-label" id="annualLabel">Annual</span>
+        <div class="toggle-badge">Save 35%</div>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Starter</div>
+          <div class="pricing-price">
+            <span class="price-currency">$</span>
+            <span class="price-amount" id="price-starter">25</span>
+            <span class="price-period">&nbsp;/ mo</span>
+          </div>
+          <div class="price-annual-note" id="annual-note-starter">&nbsp;</div>
+          <p class="pricing-desc">Perfect for early-stage analytics teams and consultants.</p>
+          <div class="pricing-divider"></div>
+          <div class="pricing-features">
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>Up to 5 analysts</span></div>
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>5 dashboards</span></div>
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>Basic reporting automation</span></div>
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>30-day data history</span></div>
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>Email support</span></div>
+          </div>
+          <a href="#" class="pricing-cta">Start Free Trial</a>
+        </div>
+        <div class="pricing-card featured reveal reveal-delay-1">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-tier">Professional</div>
+          <div class="pricing-price">
+            <span class="price-currency">$</span>
+            <span class="price-amount" id="price-pro">75</span>
+            <span class="price-period">&nbsp;/ mo</span>
+          </div>
+          <div class="price-annual-note" id="annual-note-pro">&nbsp;</div>
+          <p class="pricing-desc">For growing analytics teams that need smart insights and scale.</p>
+          <div class="pricing-divider"></div>
+          <div class="pricing-features">
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>Up to 25 analysts</span></div>
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>Unlimited dashboards</span></div>
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>Advanced AI alerts</span></div>
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>90-day data history</span></div>
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>Priority chat support</span></div>
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>API access & connectors</span></div>
+          </div>
+          <a href="#" class="pricing-cta">Start Free Trial</a>
+        </div>
+        <div class="pricing-card reveal reveal-delay-2">
+          <div class="pricing-tier">Enterprise</div>
+          <div class="pricing-price">
+            <span class="price-currency">$</span>
+            <span class="price-amount" id="price-ent">175</span>
+            <span class="price-period">&nbsp;/ mo</span>
+          </div>
+          <div class="price-annual-note" id="annual-note-ent">&nbsp;</div>
+          <p class="pricing-desc">Custom packages for large data teams and regulated businesses.</p>
+          <div class="pricing-divider"></div>
+          <div class="pricing-features">
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>Unlimited analysts</span></div>
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>Custom data pipelines</span></div>
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>SSO & enterprise security</span></div>
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>Unlimited history & archives</span></div>
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>Dedicated success manager</span></div>
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>Compliance and audit reports</span></div>
+          </div>
+          <a href="#" class="pricing-cta">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <script src="main.js"></script>
+</body>
+</html>
