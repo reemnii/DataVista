@@ -97,6 +97,10 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     let currentCenter = 2;
     let autoTimer = null;
     let isAnimating = false;
+    
+    if (totalCards === 0) {
+      // Carousel not present, skip initialization
+    } else {
 
     // Zoom steps
     const zoomSteps = [
@@ -263,9 +267,12 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     }
 
     // Init
-    updatePositions();
-    setZoom(zoomLevel);
-    startAuto();
+    if (totalCards > 0) {
+      updatePositions();
+      setZoom(zoomLevel);
+      startAuto();
+    }
+    } // Close carousel if block
 
     /* ── PRICING TOGGLE ── */
     const prices = { starter: [25, 16], pro: [75, 49], ent: [175, 114] };

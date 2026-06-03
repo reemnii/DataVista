@@ -579,7 +579,7 @@
     }
     .pricing-card.featured .price-annual-note { color: rgba(255,255,255,0.4); }
     .price-currency { font-size: 1.4rem; font-weight: 600; color: var(--text-2); margin-top: 6px; }
-    .price-amount { font-size: 3.2rem; font-weight: 700; letter-spacing: -0.04em; color: var(--text-1); line-height: 1; }
+    .price-amount { font-size: 3.2rem; font-weight: 700; letter-spacing: -0.04em; color: var(--accent); line-height: 1; }
     .pricing-card.featured .price-currency,
     .pricing-card.featured .price-amount { color: #fff; }
     .price-period { font-size: 0.875rem; color: var(--text-3); }
@@ -602,13 +602,16 @@
       margin-top: 1px;
     }
     .pricing-card.featured .pricing-check {
-      background: rgba(91,191,181,0.2); border-color: rgba(91,191,181,0.4); color: var(--accent-light);
+      background: rgba(26, 57, 54, 0.2); border-color: rgba(91,191,181,0.4); color: var(--accent-light);
     }
     .pricing-cta {
       display: block; text-align: center; font-size: 0.9rem; font-weight: 600;
       padding: 13px; border-radius: 100px;
       border: 1.5px solid var(--accent-border); color: var(--accent);
       transition: all 0.4s var(--silk);
+    }
+    .pricep{
+      margin-top: 60px;
     }
     .pricing-cta:hover { background: var(--accent-ghost); }
     .pricing-card.featured .pricing-cta {
@@ -617,6 +620,9 @@
     }
     .pricing-card.featured .pricing-cta:hover { background: var(--accent-mid); }
 
+    .pricing-card.featured{
+      background-color: var(--accent-mid);
+    }
       /* FAQ */
     .faq-section { padding: 40px 0; background: var(--bg-alt); }
     .faq-inner { display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px; align-items: start; }
