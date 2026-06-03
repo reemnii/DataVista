@@ -161,7 +161,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
           });
         }
       });
-      carouselStageEl.style.height = s.sh + 'px';
+      if (carouselStageEl) carouselStageEl.style.height = s.sh + 'px';
     }
 
     function getPositionForOffset(cardIndex, centerIndex, total) {
@@ -193,17 +193,21 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     function next() { goTo((currentCenter + 1) % totalCards); }
     function prev() { goTo((currentCenter - 1 + totalCards) % totalCards); }
 
-    // Build dots
+    // Build dots (if carousel present)
     const dotsContainer = document.getElementById('carouselDots');
-    cards.forEach((_, i) => {
-      const dot = document.createElement('div');
-      dot.className = 'carousel-dot' + (i === currentCenter ? ' active' : '');
-      dot.addEventListener('click', () => goTo(i));
-      dotsContainer.appendChild(dot);
-    });
+    if (dotsContainer) {
+      cards.forEach((_, i) => {
+        const dot = document.createElement('div');
+        dot.className = 'carousel-dot' + (i === currentCenter ? ' active' : '');
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+      });
+    }
 
-    document.getElementById('carouselNext').addEventListener('click', () => { next(); resetAuto(); });
-    document.getElementById('carouselPrev').addEventListener('click', () => { prev(); resetAuto(); });
+    const carouselNextBtn = document.getElementById('carouselNext');
+    const carouselPrevBtn = document.getElementById('carouselPrev');
+    if (carouselNextBtn) carouselNextBtn.addEventListener('click', () => { next(); resetAuto(); });
+    if (carouselPrevBtn) carouselPrevBtn.addEventListener('click', () => { prev(); resetAuto(); });
 
     cards.forEach((card, i) => {
       card.addEventListener('click', () => {
@@ -216,41 +220,47 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     function resetAuto() { stopAuto(); startAuto(); }
 
     const stage = document.getElementById('carouselStage');
-    stage.addEventListener('mouseenter', stopAuto);
-    stage.addEventListener('mouseleave', startAuto);
+    const carouselStageEl = stage;
+    if (stage) {
+      stage.addEventListener('mouseenter', stopAuto);
+      stage.addEventListener('mouseleave', startAuto);
 
-    let touchStartX = 0;
-    stage.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-    stage.addEventListener('touchend', e => {
-      const diff = touchStartX - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 40) { diff > 0 ? next() : prev(); resetAuto(); }
-    });
+      let touchStartX = 0;
+      stage.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+      stage.addEventListener('touchend', e => {
+        const diff = touchStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) { diff > 0 ? next() : prev(); resetAuto(); }
+      });
+    }
 
     /* ── CAROUSEL ZOOM ── */
     const zoomPipsEl      = document.getElementById('zoomPips');
     const zoomInBtn       = document.getElementById('zoomIn');
     const zoomOutBtn      = document.getElementById('zoomOut');
-    const carouselStageEl = document.getElementById('carouselStage');
-
-    zoomSteps.forEach((_, i) => {
-      const pip = document.createElement('div');
-      pip.className = 'zoom-pip' + (i === zoomLevel ? ' active' : '');
-      pip.addEventListener('click', () => setZoom(i));
-      zoomPipsEl.appendChild(pip);
-    });
 
     function setZoom(level) {
       zoomLevel = Math.max(0, Math.min(zoomSteps.length - 1, level));
       applyCardStyles(true); // suppress transition so width snaps, then transform animates
-      zoomPipsEl.querySelectorAll('.zoom-pip').forEach((p, i) => {
-        p.classList.toggle('active', i === zoomLevel);
-      });
-      zoomOutBtn.disabled = zoomLevel === 0;
-      zoomInBtn.disabled  = zoomLevel === zoomSteps.length - 1;
+      if (zoomPipsEl) {
+        zoomPipsEl.querySelectorAll('.zoom-pip').forEach((p, i) => {
+          p.classList.toggle('active', i === zoomLevel);
+        });
+      }
+      if (zoomOutBtn) zoomOutBtn.disabled = zoomLevel === 0;
+      if (zoomInBtn) zoomInBtn.disabled  = zoomLevel === zoomSteps.length - 1;
     }
 
-    zoomInBtn.addEventListener('click',  () => setZoom(zoomLevel + 1));
-    zoomOutBtn.addEventListener('click', () => setZoom(zoomLevel - 1));
+    if (zoomPipsEl && zoomInBtn && zoomOutBtn) {
+      zoomSteps.forEach((_, i) => {
+        const pip = document.createElement('div');
+        pip.className = 'zoom-pip' + (i === zoomLevel ? ' active' : '');
+        pip.addEventListener('click', () => setZoom(i));
+        zoomPipsEl.appendChild(pip);
+      });
+
+      zoomInBtn.addEventListener('click',  () => setZoom(zoomLevel + 1));
+      zoomOutBtn.addEventListener('click', () => setZoom(zoomLevel - 1));
+    }
 
     // Init
     updatePositions();
@@ -310,11 +320,81 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
       });
     }
     
-    // Initialize pricing toggle when DOM is ready
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initPricingToggle);
-    } else {
+    // Contact form initialization
+    function initContactForm() {
+      window.contactFormHandled = true;
+      const form = document.getElementById('contactForm');
+      if (!form) return;
+      const emailEl = document.getElementById('contactEmail');
+      const nameEl = document.getElementById('contactName');
+      const msgEl = document.getElementById('contactMessage');
+      const successEl = document.getElementById('contactSuccess');
+      const errorNameEl = document.getElementById('error-name');
+      const errorEmailEl = document.getElementById('error-email');
+      const errorMessageEl = document.getElementById('error-message');
+
+      function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      function clearErrors() {
+        if (errorNameEl) errorNameEl.textContent = '';
+        if (errorEmailEl) errorEmailEl.textContent = '';
+        if (errorMessageEl) errorMessageEl.textContent = '';
+      }
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (!form) return;
+        clearErrors();
+        let ok = true;
+
+        if (!nameEl || !nameEl.value.trim()) {
+          if (errorNameEl) errorNameEl.textContent = 'Please enter your name.';
+          ok = false;
+        }
+        if (!emailEl || !validateEmail(emailEl.value.trim())) {
+          if (errorEmailEl) errorEmailEl.textContent = 'Please enter a valid email address.';
+          ok = false;
+        }
+        if (!msgEl || !msgEl.value.trim()) {
+          if (errorMessageEl) errorMessageEl.textContent = 'Please add a message.';
+          ok = false;
+        }
+
+        if (!ok) {
+          if (successEl) successEl.hidden = true;
+          return;
+        }
+
+        if (successEl) {
+          successEl.textContent = 'Thanks — we received your message.';
+          successEl.hidden = false;
+        }
+
+        form.reset();
+        setTimeout(() => {
+          if (successEl) successEl.hidden = true;
+        }, 5000);
+      });
+
+      // Live email validation
+      if (emailEl && errorEmailEl) {
+        emailEl.addEventListener('input', () => {
+          errorEmailEl.textContent = validateEmail(emailEl.value.trim()) ? '' : 'Invalid email address';
+        });
+      }
+    }
+
+    // Initialize pricing toggle and contact form when DOM is ready
+    function initAfterDom() {
       initPricingToggle();
+      initContactForm();
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAfterDom);
+    } else {
+      initAfterDom();
     }
 
     /* ── FAQ ACCORDION ── */
@@ -337,12 +417,16 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
     const faqToggleAllBtn = document.getElementById('faqToggleAll');
     const faqToggleIcon  = document.getElementById('faqToggleIcon');
-    faqToggleAllBtn.addEventListener('click', () => {
-      allOpen = !allOpen;
-      faqItems.forEach(item => {
-        item.classList.toggle('open', allOpen);
-        item.querySelector('.faq-question').setAttribute('aria-expanded', String(allOpen));
+    if (faqToggleAllBtn) {
+      faqToggleAllBtn.addEventListener('click', () => {
+        allOpen = !allOpen;
+        faqItems.forEach(item => {
+          item.classList.toggle('open', allOpen);
+          const question = item.querySelector('.faq-question');
+          if (question) question.setAttribute('aria-expanded', String(allOpen));
+        });
+        if (faqToggleIcon) faqToggleIcon.textContent = allOpen ? '−' : '+';
+        const labelNode = faqToggleAllBtn.lastChild;
+        if (labelNode) labelNode.textContent = allOpen ? ' Collapse all' : ' Expand all';
       });
-      faqToggleIcon.textContent = allOpen ? '−' : '+';
-      faqToggleAllBtn.lastChild.textContent = allOpen ? ' Collapse all' : ' Expand all';
-    });
+    }
