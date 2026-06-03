@@ -491,7 +491,7 @@
 
     /*PRICING*/
     .pricing-section { padding: 100px 0; background: var(--surface); border-top: 1px solid var(--border); }
-    .faq-section { padding: 100px 0; background: var(--bg-alt); }
+    .faq-section { padding: 100px 0; background: var(--surface); }
     .pricing-header { text-align: center; margin-bottom: 48px; }
     .pricing-header .section-sub { margin: 16px auto 0; text-align: center; }
 
@@ -663,16 +663,16 @@
     .faq-item.open .faq-answer-inner { padding-bottom: 20px; }
    /* FOOTER*/
     .footer {
-      background: var(--text-1); padding: 80px 0 40px;
+      background: var(--text-1); padding: 28px 0 28px;
       border-top: 1px solid rgba(255,255,255,0.06);
     }
     .footer-grid {
       display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr;
-      gap: 48px; margin-bottom: 64px;
+      gap: 40px; margin-bottom: 32px;
     }
-    .footer-brand .nav-logo { color: #fff; font-size: 1.3rem; margin-bottom: 16px; display: block; }
+    .footer-brand .nav-logo { color: #fff; font-size: 1.3rem; margin-bottom: 12px; display: block; }
     .footer-brand-desc { font-size: 0.875rem; line-height: 1.7; color: rgba(255,255,255,0.45); max-width: 240px; }
-    .footer-socials { display: flex; gap: 10px; margin-top: 24px; }
+    .footer-socials { display: flex; gap: 10px; margin-top: 18px; }
     .social-btn {
       width: 36px; height: 36px; border-radius: 10px;
       border: 1px solid rgba(255,255,255,0.1);
@@ -694,8 +694,8 @@
     .footer-links a:hover { color: var(--accent-light); }
     .footer-bottom {
       border-top: 1px solid rgba(255,255,255,0.06);
-      padding-top: 32px;
-      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+      padding-top: 18px;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
     }
     .footer-copy { font-size: 0.8125rem; color: rgba(255,255,255,0.3); }
     .footer-copy a { color: rgba(255,255,255,0.45); transition: color 0.3s; }
