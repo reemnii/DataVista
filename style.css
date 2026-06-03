@@ -374,7 +374,7 @@
     .float-badge-2-label { font-size: 0.7rem; color: rgba(255,255,255,0.7); margin-top: 2px; }
 
     /* FEATURES */
-    .features-section { padding: 60px 0 120px 0; }
+    .features-section { padding: 60px 0 120px 0; background: var(--surface); border-top: 1px solid rgba(13,30,28,0.06); }
     .features-header { text-align: center; margin-bottom: 80px; }
     .features-header .section-sub { margin: 16px auto 0; text-align: center; }
 
@@ -487,8 +487,13 @@
     }
     .stat-sublabel { font-size: 0.78rem; color: var(--text-3); line-height: 1.5; }
 
+    .stats-section { padding: 100px 0; background: var(--surface-2); border-top: 1px solid rgba(13,30,28,0.08); }
+    .stats-header { text-align: center; max-width: 680px; margin: 0 auto 48px; }
+    .stats-header .section-sub { margin: 16px auto 0; }
+
     /*PRICING*/
     .pricing-section { padding: 100px 0; background: var(--surface); border-top: 1px solid var(--border); }
+    .faq-section { padding: 100px 0; background: var(--bg-alt); }
     .pricing-header { text-align: center; margin-bottom: 48px; }
     .pricing-header .section-sub { margin: 16px auto 0; text-align: center; }
 
@@ -538,7 +543,7 @@
     }
 
     /* CONTACT FORM */
-    .contact-section { padding: 48px 0; display: flex; flex-direction: column; align-items: center; background: #ffffff; }
+    .contact-section { padding: 64px 0; display: flex; flex-direction: column; align-items: center; background: #ffffff; border-top: 1px solid rgba(13,30,28,0.06); }
     /* center headings and intro like other sections */
 
     .contact-section .section-label,
@@ -615,7 +620,7 @@
     .pricing-card.featured .pricing-cta:hover { background: var(--accent-mid); }
 
       /* FAQ */
-    .faq-section { padding: 100px 0; }
+    .faq-section { padding: 100px 0; background: var(--bg-alt); }
     .faq-inner { display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px; align-items: start; }
     .faq-sidebar { position: sticky; top: 100px; }
     .faq-sidebar .section-sub { margin-top: 16px; margin-bottom: 32px; }
