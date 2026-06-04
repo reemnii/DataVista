@@ -328,8 +328,8 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     }
     
     // Contact form initialization
+    window.contactFormHandled = true;
     function initContactForm() {
-      window.contactFormHandled = true;
       const form = document.getElementById('contactForm');
       if (!form) return;
       const emailEl = document.getElementById('contactEmail');
@@ -375,7 +375,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
         }
 
         if (successEl) {
-          successEl.textContent = 'Thanks — we received your message.';
+          successEl.textContent = 'Thanks - we received your message.';
           successEl.hidden = false;
         }
 
