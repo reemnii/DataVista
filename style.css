@@ -648,20 +648,15 @@
   }
 
   .team-card{
-    position:relative;
-    background:var(--surface-2);
-    border:1px solid var(--border);
-    border-radius:var(--radius-lg);
-    overflow:hidden;
-    box-shadow:var(--shadow-sm);
-    transition:
-      transform var(--silk-dur) var(--silk),
-      box-shadow var(--silk-dur) var(--silk);
-  }
-
-  .team-card:hover{
-    transform:scale(1.02);
-    box-shadow:var(--shadow-md);
+     position:relative;
+     background:var(--surface-2);
+     border:1px solid var(--border);
+     border-radius:var(--radius-lg);
+     overflow:hidden;
+     box-shadow:var(--shadow-sm);
+}
+  .team-image img{
+    transition: transform 1s var(--silk);
   }
 
   .team-badge{
@@ -680,7 +675,8 @@
   }
 
   .team-image{
-    height:260px;
+    aspect-ratio: 4 / 5;
+    height: auto;
     overflow:hidden;
   }
 
@@ -688,7 +684,8 @@
     width:100%;
     height:100%;
     object-fit:cover;
-    
+    object-position: center top;
+    display: block;
   }
 
   .team-card:hover .team-image img{
@@ -746,11 +743,118 @@
     .team-grid{
       grid-template-columns:1fr;
     }
+
+    .team-card{
+      max-width: 360px;
+      margin: 0 auto;
+    }
+
+    .team-image{
+      aspect-ratio: 16 / 11;
+    }
+
+    .team-content{
+      padding: 18px;
+    }
+
+    .team-name{
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+
+    .team-desc{
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .pricing-grid{
+      max-width: 360px;
+      margin: 0 auto;
+    }
+
+    .pricing-card{
+      padding: 26px 22px;
+    }
+
+    .pricing-badge{
+      top: -11px;
+      padding: 4px 12px;
+      font-size: 0.68rem;
+    }
+
+    .pricing-price{
+      margin-bottom: 2px;
+    }
+
+    .price-amount{
+      font-size: 2.6rem;
+    }
+
+    .price-currency{
+      font-size: 1.15rem;
+    }
+
+    .pricing-desc{
+      font-size: 0.84rem;
+      margin-bottom: 22px;
+    }
+
+    .pricing-features{
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .pricing-feature{
+      font-size: 0.84rem;
+    }
+
+    .pricing-cta{
+      padding: 11px;
+      font-size: 0.85rem;
+    }
+  }
+
+  @media (max-width: 480px){
+    .team-card{
+      max-width: 100%;
+    }
+
+    .team-image{
+      aspect-ratio: 16 / 10;
+    }
+
+    .team-content{
+      padding: 16px;
+    }
+
+    .team-role{
+      font-size: 0.68rem;
+      margin-bottom: 8px;
+    }
+
+    .team-name{
+      font-size: 1.05rem;
+    }
+
+    .pricing-grid{
+      max-width: 100%;
+    }
+
+    .pricing-card{
+      padding: 22px 18px;
+    }
+
+    .price-amount{
+      font-size: 2.35rem;
+    }
+
+    .pricing-desc{
+      margin-bottom: 18px;
+    }
   }
       /* FAQ */
     .faq-section { padding: 40px 0; background: var(--bg-alt); }
     .faq-inner { display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px; align-items: start; }
-    .faq-sidebar { position: sticky; top: 100px; }
     .faq-sidebar .section-sub { margin-top: 16px; margin-bottom: 32px; }
     .faq-toggle-all {
       font-size: 0.875rem; font-weight: 600; color: var(--accent);
